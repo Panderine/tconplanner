@@ -57,7 +57,7 @@ public class ModifierStack {
 
     public void applyIncrementals(ToolStack tool){
         stack.stream().distinct().forEach(info -> {
-            Modifier mod = info.modifier;
+            ResourceLocation mod = info.modifier;
             int amount = ModifierRecipeLookup.getNeededPerLevel(mod.getId());
             if(amount > 0){
                 IncrementalModifier.setAmount(tool.getPersistentData(), mod.getId(), amount - getIncrementalDiff(mod));
